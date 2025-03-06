@@ -1,73 +1,109 @@
-/* Основные стили */ header { padding: 20px 0; }
+/* Общие стили */
+body {
+  font-family: sans-serif;
+  background-color: rgb(255, 209, 216);
+  margin: 0;
+  padding: 0;
+}
 
-.container { max-width: 1440px; width: 100%; padding: 0 20px; margin: 0 auto; }
+/* Контейнер */
+.container {
+  max-width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
 
-.header__top { display: flex; flex-wrap: wrap; justify-content: space-between; border-bottom: 1px solid black; padding-bottom: 15px; }
+/* Шапка */
+.header__top {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid black;
+  padding-bottom: 15px;
+}
 
-.logo { font-size: 28px; text-transform: uppercase; color: black; font-weight: 800; }
+.logo {
+  font-size: 28px;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 800;
+}
 
-a { text-decoration: none; color: inherit; }
+.nav__list {
+  display: flex;
+  gap: 15px;
+}
 
-.header__wrapper { display: flex; gap: 20px; flex-wrap: wrap; }
+/* Карточки */
+.card, .carda, .cardi {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  height: auto;
+  background-color: rgb(252, 192, 201);
+}
 
-.contact { display: flex; flex-direction: column; align-items: flex-end; }
+.card img {
+  width: 100%; /* Адаптивная ширина */
+  max-width: 300px;
+  height: auto;
+}
 
-.contact span { font-size: 14px; }
+/* Медиа-запросы для адаптации */
+@media (max-width: 768px) {
+  .header__top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-.contact__link { font-size: 18px; color: red; }
+  .nav__list {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-body { font-family: sans-serif; background-color: rgb(255, 209, 216); }
+  .contact {
+    align-items: center;
+  }
 
-.list-reset { list-style: none; margin: 0; padding: 0; }
+  .card-list {
+    flex-direction: column;
+    gap: 15px;
+  }
 
-.nav__list { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+  .card-item {
+    width: 100%;
+  }
 
-nav { display: flex; justify-content: center; padding-top: 20px; }
+  .menu {
+    display: none;
+  }
 
-.call-me { color: blue; text-transform: uppercase; }
+  .menu.active {
+    display: block;
+  }
+}
 
-.about-column { display: flex; flex-direction: column; justify-content: space-between; }
+/* Для совсем маленьких экранов */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 24px;
+  }
 
-.card { display: flex; flex-direction: column; justify-content: space-between; padding: 24px 16px; height: auto; background-color: rgb(252, 192, 201); }
+  .card-header, .carda-header {
+    font-size: 22px;
+  }
 
-.card img { width: 100%; max-width: 400px; }
+  .contact span,
+  .contact__link {
+    font-size: 16px;
+  }
 
-.card-header { font-weight: 700; font-size: 24px; background-color: rgb(252, 192, 201); }
+  .nav__list {
+    gap: 5px;
+  }
 
-.card-list { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; background-color: rgb(255, 209, 216); }
-
-.card-item { width: 100%; max-width: 320px; }
-
-.card-link { position: relative; color: #607ce6; font-size: 18px; }
-
-.card-link::after { content: ""; position: absolute; top: 50%; right: -10px; width: 8px; height: 8px; border-right: 2px solid #607ce6; border-bottom: 2px solid #607ce6; transform: translateY(-50%) rotateZ(-45deg); transition: transform 0.3s ease; }
-
-.card-link:hover::after { transform: translateY(-50%) translateX(5px) rotateZ(-45deg); }
-
-.nav_link:hover { color: #e39e27; background: #333; transition: all 0.3s linear; }
-
-/* Меню */ #menu1 { width: 100%; }
-
-#menu1 ul { display: flex; flex-direction: column; padding: 0; list-style: none; }
-
-#menu1 ul li a { display: block; padding: 10px; font-size: 16px; text-transform: uppercase; font-weight: bold; color: blue; }
-
-#menu1 ul li ul { display: none; position: absolute; background: white; width: 100%; }
-
-#menu1 ul li:hover ul { display: block; }
-
-/* Адаптивные стили */ @media (max-width: 768px) { .header__top { flex-direction: column; align-items: center; text-align: center; }
-
-.logo { margin-bottom: 10px; }
-
-.header__wrapper { flex-direction: column; align-items: center; }
-
-.contact { align-items: center; }
-
-.nav__list { flex-direction: column; align-items: center; }
-
-.card-list { flex-direction: column; align-items: center; }
-
-.card-item { width: 100%; }
-
-#menu1 ul { flex-direction: column; align-items: center; } }
+  .card img {
+    max-width: 250px;
+  }
+}

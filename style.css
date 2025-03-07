@@ -53,10 +53,12 @@ nav {  display: flex;
     padding: 32px 24px;
     height: 700px;
     background-color: rgb(252, 192, 201);
+  width: 100%;
 }
 
+
 .card img {
-    width: 400px;
+    width: 100%;
 }
 
 .card-header {
